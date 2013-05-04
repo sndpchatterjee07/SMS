@@ -1,0 +1,105 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<!-- <window height="100%" apply="com.sss.composer.ManagingComposer" id="main"> -->
+<borderlayout id="main" width="100%" height="100%" apply="com.sss.composer.ManagingComposer" vflex="min">
+	
+			<west title="STB VC Info" style="font-family: Verdana; color: #6E6E6E;font-size: 15px; font-weight:bold"  maxsize="190" splittable="true" collapsible="true" autoscroll="true" open="true">
+			 <div width="185px" height="80%" style="overflow:auto" > 
+				<tree id="roottree" zclass="z-dottree" width="180px">
+				</tree>
+			</div>
+			</west>
+			
+			
+			<center border="normal">
+			  <div>
+			  		<div align="center">
+			  			<label id="msg"></label>
+			  		</div>
+			  		
+			  		<separator width="20px"/>
+			  
+					<div align="left">
+						<button id = "saveStbVcInfo" width="182px" label="SAVE STB-VC INFO" mold="os" style="font-weight:bold"/>
+						<button id = "saveVcBouquetInfo" width="182px" label="SAVE VC-BOUQUET INFO" mold="os" style="font-weight:bold"/>
+						<button id = "saveVcChannelInfo" width="182px" label="SAVE VC-CHANNEL INFO" mold="os" style="font-weight:bold"/>
+						<button id = "saveBouquetSubBouquetInfo" width="250px" label="SAVE BOUQUET-SUBBOUQUET INFO" mold="os" style="font-weight:bold" disabled="true"/>
+					</div>
+					
+					<separator width="50px"/>
+					
+					<vbox>
+					<hbox>
+						<grid width="350px">
+							<columns>
+								<column width="150px"></column>
+								<column width="130px"></column>
+								<column width="70px"></column>
+							</columns>
+						
+						<rows>
+								<row>
+									<label value="Enter STB ID" />
+									<textbox id="s1" width="100px"/>
+									<button id="sb1" label="Add"/>
+								</row>	
+							
+								<row>
+									<label value="Enter VCNumber" />
+									<textbox id="s2" width="130px"/>
+									<button id="sb2" label="Add"/>
+								</row>
+						</rows>
+					</grid>
+		
+		
+				<hbox>
+					<button id="b_bouquet" orient="vertical" width="80px" height="80px" label="Bouquet"  mold="os"></button>
+					<button id="b_subbou" orient="vertical" width="100px" height="80px"  label="Sub-Bouquet" mold="os"></button>
+					<button id="b_channel" orient="vertical" width="80px" height="80px"  label="Channel" mold="os"></button>
+					<button id="stb_scheme" orient="vertical" width="80px" height="80px"  label="Scheme" mold="os" visible="false"></button>
+				</hbox>
+			</hbox>
+			
+			
+				<!-- START  SEARCH  -->
+				<div align="center" height="1">
+				<label id="searchLabel" value="Search:" visible="false"/>
+						<combobox id="searchName" cols="25" visible="false">
+								<comboitem label="Name"></comboitem>
+								<comboitem label="Code"></comboitem>
+						</combobox>
+						
+						<textbox id="searchQuery" value="" visible="false"></textbox>
+						<button label="SEARCH" id="search" visible="false"/>
+				</div>
+			    <!-- END SEARCH  -->
+			
+				<div style="overflow:auto;" height="400px">
+						<!-- <include id="inc"></include> -->
+						<grid id="datagrid" visible="false" mold="paging" pagingPosition="top" pageSize="8">
+							<columns>
+									<column label="Select"></column>
+									<column label="Name" sort="auto"></column>
+									<column label="Start Time"></column>
+									<column label="End Time"></column>
+							</columns>
+							
+							<rows id="rows"/>
+						</grid>
+				</div>
+			</vbox>
+			
+			</div>
+			</center>
+</borderlayout>
+
+
+<!-- START POP-UP FOR DISPLAYING VC-BOUQUET/VC-CHANNEL INFORMATION ON MOUSEHOVER -->
+	<popup id="selectedVcInfoDisplay" width="600px">
+		<label id="detailedVcInfo" value=""></label>
+		<separator/>
+	</popup>
+<!--  END POP-UP -->
+
+</zk>

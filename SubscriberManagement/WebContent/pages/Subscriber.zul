@@ -1,0 +1,47 @@
+<?page title="Subscriber Management" contentType="text/html;charset=UTF-8"?>
+<zk>
+<!-- <window border="normal" id="main" height="100%"> -->
+<window id="main" title="" border="normal" apply="com.sss.composer.SubscriberComposer" width="100%" height="100%">
+
+<div align="right">
+<image id="home" src="/img/home.png" width="30px"/>
+<image id="logout" src="/img/logout.png" width="30px"/>
+</div>
+
+<tabbox id="tb" >
+
+    <tabs id="tabs">
+        <tab id="A" label="Basic Info" />
+        <tab id="B" label="STB-VC" />
+    </tabs>
+    
+    
+    <tabpanels>
+    
+        <tabpanel id="basic">
+        	<include id="inc1" src="basic.zul"></include>
+        </tabpanel>
+        
+        <tabpanel id = "stbvc">
+        	<include id="inc2"></include>
+        </tabpanel>
+        
+        
+        <tabpanel>
+        	<label id="x3" value="x3"></label>
+        </tabpanel>
+        
+        
+         <tabpanel>
+        	<label id="x4" value="x4"></label>
+        </tabpanel>
+        
+        
+         <tabpanel>
+        	<label id="x5" value="x5"></label>
+        </tabpanel>
+        
+    </tabpanels>
+</tabbox>
+</window>
+</zk>

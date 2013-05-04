@@ -1,0 +1,26 @@
+<zk>
+<window id="_subBouquetSelectionWindow" title="Select Sub Bouquet" border="normal" width="460px"
+	apply="com.sss.composer.SubBouquetSelectDialogController"
+	position="center,center" closable="true" 
+	action="show: slideDown;hide: slideUp">
+
+	
+			<div id="zform">
+				<div>	
+					<space height="30px"/>
+						<label style="font-family: Verdana; color: #6E6E6E;font-size: 12px; font-weight:bold;">LIST OF SUB-BOUQUETS</label>
+						<space height="50px"/>
+						<listbox id="listbox" checkmark="true" multiple="false" width="100%">
+								<listhead sizable="true">
+				    					<listheader label="SELECT" />
+				    					<listheader label="SUB BOUQUET-NAME"/>
+								</listhead>
+						</listbox>
+						<hbox pack="center" width="100%">
+							<button label="SELECT" id="closeBtn"/>
+						</hbox>
+				</div>
+			</div>
+	
+</window>
+</zk>

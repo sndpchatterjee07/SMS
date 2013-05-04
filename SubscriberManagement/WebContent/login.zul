@@ -1,0 +1,48 @@
+<?page title="Subscriber Management System" contentType="text/html;charset=UTF-8"?>
+<zk >
+<style dynamic="true">
+		<!-- Make Plain Grid -->
+		.GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row
+		.z-cell,div.z-grid {
+		border: none;
+		overflow: hidden;
+		zoom: 1;
+		background:white;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: none;
+		}
+</style>
+
+<window height="200px" width="400px" id="window"  border="normal" focus="true"  apply="com.sss.composer.LoginComposer">
+
+<div height="30px" align="center"><label  style="color:blue;font-weight:bold" id="msg"/></div>
+<grid sclass="GridLayoutNoBorder">
+<rows>
+<row align="center">
+<label value="User Name"></label>
+<textbox id="username"></textbox>
+</row>
+<row align="center">
+<label value="Password"></label>
+<textbox id="password" type="password"></textbox>
+</row>
+</rows>
+</grid>
+<grid sclass="GridLayoutNoBorder">
+<rows>
+<row align="center">
+<label></label>
+<button id="login" label="Sign in"></button>
+</row>
+</rows>
+</grid>
+ 	
+<div align="center" ><label  style="color:#81BEF7;font-weight:bold" id="a" value="Copyright © 2011 Synergy System Solutions | All rights reserved"/> </div>
+
+</window>
+	
+
+
+</zk>

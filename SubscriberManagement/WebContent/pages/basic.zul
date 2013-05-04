@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<zscript><![CDATA[
+if(Sessions.getCurrent().getAttribute("logininfo")==null){
+	Executions.getCurrent().sendRedirect("../login.zul");
+}
+]]></zscript>
+<window id="main" width="100%" height="100%" apply="com.sss.composer.BasicComposer">
+	<hbox spacing="20px">
+		<grid id="datagrid" width="350px" >
+		<columns>
+			<column width="150px"></column>
+			<column width="180px"></column>
+		</columns>
+		<rows>
+			<row>
+					<div>	
+					    <label style="color: red;font-weight:bold;" value = "*"/>
+						<label value="First Name"/>
+					</div>	
+				<textbox id="fname" width="150px"/>
+			</row>
+			<row>
+				<label value="Middle Name"/>
+				<textbox id="mname" width="150px"/>
+			</row>
+			<row>
+			   <div>	
+					<label style="color: red;font-weight:bold;" value = "*"/>
+					<label value="Last Name"/>
+				</div>
+				<textbox id="lname" width="150px"/>
+			</row>
+			<row>
+			   <div>
+					<label style="color: red;font-weight:bold;" value = "*"/>
+					<label value="Area"/>
+				</div>
+				<!-- <combobox id="area" width="150px"/> -->
+				<combobox id="area" width="150px" readonly="true" text="Select" style=""/>
+			</row>
+			<row>
+				<div>
+					<label style="color: red;font-weight:bold;" value = "*"/>
+					<label value="Bill Cycle"/>
+				</div>
+				<!-- <combobox id="bcycle" width="150px"/> -->
+				<combobox id="bcycle" width="150px" readonly="true" text="Select" style=""/>
+			</row>
+			<row>
+				<div>
+				    <label style="color: red;font-weight:bold;" value = "*"/>
+					<label value="Tax Combination"/>
+				</div>	
+				<!-- <combobox id="tax" width="150px"/> -->
+				<combobox id="tax" width="150px" readonly="true" text="Select" style=""/>
+			</row>
+			<row>
+				<div>
+					<label style="color: red;font-weight:bold;" value = "*"/>
+					<label value="Status"/>
+				</div>	
+				<combobox id="status" width="150px" readonly="true" text="Select" style="">
+					<comboitem label="Active" value="Active"></comboitem>
+					<comboitem label="Deactive" value="Deactive"></comboitem>
+					<comboitem label="Discontinue" value="Discontinue"></comboitem>
+				</combobox>
+			</row>
+			<row>
+				<label value="SAF Number"/>
+				<!-- <combobox id="saf" width="150px"/> -->
+				<textbox id="saf" width="150px"/>
+			</row>
+			
+			
+			<row>
+				<label value="(*) Mandatory Fields" style="color: red;font-weight:bold;"/>			
+			</row>
+		
+		</rows>
+	</grid>
+	<separator orient="vertical" bar="true" height="400px"/>
+	<grid>
+		<columns>
+			<column width="100px"></column>
+			<column width="150px"></column>
+			<column width="100px"></column>
+			<column width="150px"></column>
+		</columns>
+		<rows>
+			<row>
+				<label value="Phone"/>
+				<textbox id="phone" width="140px"/>
+				<label value="Mobile"/>
+				<textbox id="mobile" width="140px"/>
+			</row>
+			<row>
+				<label value="E-mail"/>
+				<textbox id="email" width="140px"/>
+				<space/><space/>
+			</row>
+			<row>
+				<cell colspan="4">
+					<label style="color: red;font-weight:bold;" value = "*"/>
+					<label value=" Installation Address" style="font-weight:bold;font-size:16px"/>
+				</cell>
+			</row>
+			<row>
+				<label value="House"/>
+				<textbox id="house" width="140px"/>
+				<label value="Floor"/>
+				<textbox id="floor" width="140px"/>
+			</row>
+			<row>
+				<label value="Complex"/>
+				<textbox id="complex" width="140px"/>
+			    <label value="Side"/>
+				<textbox id="side" width="140px"/>
+				
+			</row>
+			<row>
+				<label value="Colony"/>
+				<textbox id="colony" width="140px"/>
+				 <label value="Road"/>
+				<textbox id="road" width="140px"/>
+				
+			</row>
+			<row>
+				<label value="Block"/>
+				<textbox id="block" width="140px"/>
+				<label value="Sector"/>
+				<textbox id="sector" width="140px"/>
+			   
+				
+			</row>
+			<row>
+				<label value="City"/>
+				<textbox id="city" width="140px"/>
+				<label value="District"/>
+				<textbox id="district" width="140px"/>
+			</row>
+			<row>
+				<label value="State"/>
+				<textbox id="state" width="140px"/>
+				<label value="Pin Code"/>
+				<textbox id="pin" width="140px"/>
+			</row>
+			<row>
+				<cell colspan="2">
+					<label value="Billing Address" style="font-weight:bold;font-size:16px"></label>
+				</cell>
+				<cell colspan="2">
+					<checkbox id="useInstallationAddress" checked="false"/>
+					<label value="same as installation address ?"/>
+				</cell>
+			</row>
+			<row>
+				<label value="Address"/>
+				<cell colspan="2">
+					<textbox id="billingaddress" width="300px" multiline="true" rows="4" value=""/>
+				</cell>
+			</row>
+			
+			
+				<row align="center">
+			     <label></label>
+			          <div align="center">
+			          	<button id="Reset"  label="Reset"/>
+					    <button id="Save"  label="Save"/>
+					  </div>  
+			     </row>
+		</rows>
+	</grid>
+	
+	<separator orient="vertical" bar="true" height="400px"/>
+	<grid id="formValidationGrid" width="300px">
+	   <rows>
+			<row>
+				<cell colspan="2">
+					<textbox id="showValidationMessages" width="300px" multiline="true" rows="20" value="" style="font-weight:bold;color:red;"/>
+				</cell>
+			</row>
+		</rows>	
+	</grid>
+	</hbox>
+</window>
+</zk>

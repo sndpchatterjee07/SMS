@@ -1,0 +1,76 @@
+<?page title="Subscriber Management System" contentType="text/html;charset=UTF-8"?>
+<zk>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./main"?>
+<zscript><![CDATA[
+if(Sessions.getCurrent().getAttribute("logininfo")==null){
+	Executions.getCurrent().sendRedirect("../login.zul");
+}
+]]></zscript>
+
+<style dynamic="true">
+		<!-- Make Plain Grid -->
+		.GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row
+		.z-cell,div.z-grid {
+		border: none;
+		overflow: hidden;
+		zoom: 1;
+		background:
+		white;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: none;
+		}
+</style>
+	
+<window apply="com.sss.composer.IndexComposer" id="main" title="">
+	<div align="center" >
+			<div  align="center">
+				<vbox>
+					
+						<div align="center">
+						LCO:
+						<combobox id="cmblco" readonly="true">
+						<!-- <combobox id="cmblco" readonly="true" width="200px" text="Select" style=""/> -->
+							
+						</combobox>
+						</div>
+					
+						<div align="center">
+							<button id="b_load" label="Load"></button>
+							<button id="b_edit" label="Edit"></button>
+							<button id="b_new" label="New"></button>
+						</div>
+					
+				</vbox>
+			
+			</div>
+						
+			<!-- START  SUBSCRIBER SEARCH  -->
+			<div align="center" >
+			<label id="searchLabel" value="Search:" visible="false"/>
+				<combobox id="searchName" cols="25" visible="false">
+						<comboitem label="Name"></comboitem>
+						<comboitem label="Code"></comboitem>
+				</combobox>
+				
+				<textbox id="searchQuery" value="" visible="false"></textbox>
+				<button label="SEARCH" id="search" visible="false"/>
+			
+			</div>
+			<!-- END SUBSCRIBER SEARCH  -->
+			
+			
+			<div style="overflow:auto">
+			<listbox id="l_lco" mold="paging" pageSize="10" pagingPosition="top">
+				<listhead sizable="true">
+					<listheader label="Code"></listheader>
+					<listheader label="Name"></listheader>
+					<listheader label="STB ID"></listheader>
+					<listheader label="VC Number"></listheader>
+				</listhead>
+			</listbox>
+			</div>
+	</div>
+</window>
+</zk>

@@ -1,0 +1,59 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<zscript><![CDATA[
+if(Sessions.getCurrent().getAttribute("logininfo")==null){
+	Executions.getCurrent().sendRedirect("../login.zul");
+}
+]]></zscript>
+<window id="main" apply="com.sss.composer.ManageSearchComposer">
+
+
+<!-- START STB/VC SEARCH  -->
+<div align="center">
+<grid width="350px">
+	<rows>
+		<row>
+			<label value="Enter STB ID" />
+			<textbox id="s1" width="150px"/>
+			<button id="sb1" label="Search"/>
+		</row>	
+							
+		<row>
+			<label value="Enter VCNumber" />
+			<textbox id="s2" width="150px"/>
+			<button id="sb2" label="Search"/>
+		</row>
+	</rows>
+</grid>
+</div>
+<!-- END STB/VC SEARCH  -->
+
+
+<!-- LISTBOX TO DISPLAY SEARCH RESULTS  -->
+<div id="_stbdiv">
+<listbox id="_stblistbox" multiple="true" mold="paging" pagingPosition="bottom" pageSize="5">
+	<listhead>
+			<listheader label="Makenumber"></listheader>
+			<listheader label="Model No."></listheader>
+			<listheader label="Name"></listheader>
+			<listheader label="Status"></listheader>
+	</listhead>
+</listbox>
+</div>
+
+
+
+<div id="_vcdiv">
+<listbox id="_vclistbox" multiple="true" mold="paging" pagingPosition="bottom" pageSize="5">
+	<listhead>
+			<listheader label="Vcnumber"></listheader>
+			<listheader label="Name"></listheader>
+			<listheader label="Status"></listheader>
+	</listhead>
+</listbox>
+</div>
+<!-- END -  LISTBOX TO DISPLAY SEARCH RESULTS  -->
+
+
+</window>
+</zk>
